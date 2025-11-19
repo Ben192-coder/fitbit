@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ben Halperin – Fitbit Capstone</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    line-height: 1.6;
+}
+button {
+    padding: 10px 20px;
+    margin: 10px 0;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #45a049;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Fitbit Capstone Project</h1>
+<h3>By: Ben Halperin</h3>
+
+<p>Welcome! Click below to view the final HTML report.</p>
+
+<a href="Ben-Halperin-Fitbit-Capstone.html">
+    <button>📄 View Capstone HTML Report</button>
+</a>
+
+<p>You can also download the raw RMarkdown file:</p>
+
+<a href="Ben Halperin Fitbit Capstone.Rmd" download>
+    <button>⬇️ Download R Markdown (.Rmd)</button>
+</a>
+
+<p style="margin-top:40px; font-size:14px; color:#666;">
+Hosted via GitHub Pages – ben192-coder / fitbit repository
+</p>
+
+</body>
+</html>
