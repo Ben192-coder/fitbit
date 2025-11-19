@@ -1,0 +1,209 @@
+---
+title: "Bellabeat Capstone: Fitbit Data Analysis"
+author: "Ben Halperin"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
+library(tidyverse)
+library(janitor)
+library(lubridate)
+```
+
+# 1. ASK
+
+The goal of this project is to analyze Fitbit smart device data to identify user activity and sleep behavior trends that can inform Bellabeat’s marketing strategy.  
+We focus on user consistency, daily patterns, and behavioral segments.
+
+Key Questions:
+- How active are users across days?
+- How well do they sleep?
+- What relationships exist between activity, sleep, and calories?
+- What behavior segments can marketing target?
+
+---
+
+# 2. PREPARE
+
+## 2.1 Data Source  
+Fitbit Fitness Tracker Data (Kaggle, CC0).  
+30 consenting users, March–April 2016.
+
+## 2.2 Load Data
+
+```{r}
+daily_activity <- read_csv(
+  "data/Fitabase Data 3.12.16-4.11.16/dailyActivity_merged.csv") %>%
+  clean_names()
+
+sleep_minute <- read_csv(
+  "data/Fitabase Data 3.12.16-4.11.16/minuteSleep_merged.csv") %>%
+  clean_names()
+```
+##Inspect structure:
+```{r}
+glimpse(daily_activity)
+glimpse(sleep_minute)
+
+```  
+
+# 3. PROCESS
+
+## 3.1 Clean & Transform
+
+### Fix daily activity date
+
+```{r}
+daily_activity <- daily_activity %>%
+  mutate(activity_date = mdy(activity_date))
+
+### Aggregate minute-level sleep → daily sleep
+
+sleep_day <- sleep_minute %>%
+  mutate(
+    sleep_datetime = mdy_hms(date),
+    sleep_date = as.Date(sleep_datetime),
+    asleep_flag = if_else(value == 1, 1L, 0L),
+    in_bed_flag = 1L
+  ) %>%
+  group_by(id, sleep_date) %>%
+  summarise(
+    total_minutes_asleep = sum(asleep_flag, na.rm = TRUE),
+    total_time_in_bed = sum(in_bed_flag, na.rm = TRUE),
+    total_sleep_records = n_distinct(log_id),
+    .groups = "drop"
+  )
+
+#Check:
+
+glimpse(sleep_day)
+
+
+```
+## 3.2 Join Activity + Sleep
+
+```{r}
+activity_sleep <- daily_activity %>%
+  inner_join(sleep_day, by = c("id", "activity_date" = "sleep_date")) %>%
+  mutate(
+    total_active_minutes = very_active_minutes + fairly_active_minutes + lightly_active_minutes,
+    sleep_efficiency = if_else(total_time_in_bed > 0,
+                               total_minutes_asleep / total_time_in_bed,
+                               NA_real_),
+    hours_asleep = total_minutes_asleep / 60,
+    weekday = weekdays(activity_date),
+    is_weekend = weekday %in% c("Saturday","Sunday")
+  )
+```
+Basic Checks:
+```{r}
+summary(activity_sleep$total_steps)
+summary(activity_sleep$hours_asleep)
+
+
+```
+# 4. ANALYZE
+
+## 4.1 Steps by Weekday
+
+```{r}
+steps_by_weekday <- daily_activity %>%
+  mutate(
+    weekday = factor(
+      weekdays(activity_date),
+      levels=c("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday")
+    )
+  ) %>%
+  group_by(weekday) %>%
+  summarise(avg_steps = mean(total_steps, na.rm=TRUE))
+```
+steps_by_weekday
+```{r}
+ggplot(steps_by_weekday, aes(weekday, avg_steps)) +
+  geom_col(fill="steelblue") +
+  theme_minimal() +
+  labs(title="Average Steps by Weekday", x="Weekday", y="Steps")
+
+
+```
+## 4.2 Steps vs Calories
+
+```{r}
+ggplot(daily_activity, aes(total_steps, calories)) +
+  geom_point(alpha=0.4, color="darkgreen") +
+  geom_smooth(method="lm", se=FALSE, color="black") +
+  theme_minimal() +
+  labs(title="Daily Steps vs Calories Burned", x="Steps", y="Calories")
+
+cor(daily_activity$total_steps, daily_activity$calories, use="complete.obs")
+
+
+```
+## 4.3 Sleep Distribution
+
+```{r}
+ggplot(activity_sleep, aes(hours_asleep)) +
+  geom_histogram(binwidth=0.5, fill="purple", color="white") +
+  theme_minimal() +
+  labs(title="Distribution of Sleep Hours", x="Hours Asleep", y="Count")
+
+```
+## 4.4 User Segments
+
+```{r}
+user_summary <- activity_sleep %>%
+  group_by(id) %>%
+  summarise(
+    avg_steps = mean(total_steps, na.rm=TRUE),
+    avg_sleep = mean(hours_asleep, na.rm=TRUE),
+    avg_sedentary = mean(sedentary_minutes, na.rm=TRUE)
+  ) %>%
+  mutate(
+    segment = case_when(
+      avg_steps >= 10000 ~ "Highly Active",
+      avg_steps >= 5000 ~ "Casual",
+      TRUE ~ "Low Engagement"
+    )
+  )
+```
+user_summary
+```{r}
+segment_counts <- user_summary %>%
+  count(segment)
+
+ggplot(segment_counts, aes(segment, n, fill=segment)) +
+  geom_col() +
+  theme_minimal() +
+  labs(title="User Engagement Segments", x="Segment", y="Users")
+
+
+```
+# 5. SHARE
+
+Insights:
+- Steps drop on weekends.
+- Sleep often below recommended levels.
+- Steps ↔ calories strongly correlated.
+- Three natural user behavior segments appear.
+
+---
+
+# 6. ACT — Recommendations
+
+- Add consistency challenges inside the Bellabeat app.  
+- Weekend wellness reminders.  
+- Market Bellabeat as a holistic tracker (activity + sleep + mindfulness).  
+- Personalize notifications to increase engagement.  
+- Collect more Bellabeat-specific app data for better segmentation.
+
+---
+
+# END OF REPORT
+
+
