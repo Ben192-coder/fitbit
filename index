@@ -155,7 +155,7 @@
       <div class="buttons">
         <!-- MAIN HTML REPORT (opens in browser) -->
         <a class="button primary"
-           href="Ben-Halperin-Fitbit-Capstone.html"
+           href="Ben%20Halperin%20Fitbit%20Capstone.html"
            target="_blank" rel="noopener">
           View Interactive HTML Report
         </a>
@@ -177,7 +177,7 @@
       </p>
       <p>
         Direct link to the report (optional):<br />
-        <code>https://ben192-coder.github.io/fitbit/Ben-Halperin-Fitbit-Capstone.html</code>
+        <code>https://ben192-coder.github.io/fitbit/Ben%20Halperin%20Fitbit%20Capstone.html</code>
       </p>
     </section>
   </main>
