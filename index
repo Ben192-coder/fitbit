@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bellabeat Capstone – Ben Halperin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f7;
+      color: #222;
+    }
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.25rem;
+    }
+    h2 {
+      margin-top: 2.2rem;
+      font-size: 1.4rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.3rem;
+    }
+    .subtitle {
+      color: #555;
+      font-size: 0.95rem;
+    }
+    .tagline {
+      margin-top: 0.75rem;
+      color: #444;
+    }
+    .pill {
+      display: inline-block;
+      margin-top: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      background: #e5ecff;
+      color: #2647c8;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .card {
+      background: #fff;
+      border-radius: 0.9rem;
+      padding: 1.25rem 1.3rem;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+      border: 1px solid #e5e7eb;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.05rem;
+    }
+    .card p {
+      margin: 0 0 0.8rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.4rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.85rem;
+      border-radius: 999px;
+      text-decoration: none;
+      border: 1px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: #2563eb;
+      color: #fff;
+      border-color: #2563eb;
+    }
+    .btn-primary:hover {
+      background: #1d4ed8;
+      border-color: #1d4ed8;
+    }
+    .btn-ghost {
+      background: #fff;
+      color: #2563eb;
+      border-color: #bfdbfe;
+    }
+    .btn-ghost:hover {
+      background: #eff6ff;
+    }
+    ul {
+      padding-left: 1.2rem;
+      font-size: 0.9rem;
+      color: #444;
+    }
+    li {
+      margin-bottom: 0.25rem;
+    }
+    footer {
+      margin-top: 2.5rem;
+      font-size: 0.8rem;
+      color: #777;
+      text-align: center;
+    }
+    a {
+      color: #2563eb;
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <span class="pill">Portfolio Case Study</span>
+      <h1>Bellabeat Capstone: Fitbit Data Analysis</h1>
+      <div class="subtitle">by <strong>Ben Halperin</strong> · Data / Business Analytics</div>
+      <p class="tagline">
+        An end-to-end analysis of Fitbit activity and sleep data to generate actionable marketing
+        insights for Bellabeat’s women-focused wellness products.
+      </p>
+    </header>
+
+    <section>
+      <h2>Project Overview</h2>
+      <p>
+        This capstone follows the Google Data Analytics "Ask, Prepare, Process, Analyze, Share, Act"
+        framework. Using real Fitbit tracker data, I explored how user activity, sleep, and engagement
+        patterns can inform Bellabeat’s marketing and product strategy.
+      </p>
+      <ul>
+        <li>Tools: R, RStudio, tidyverse, janitor, lubridate, R Markdown</li>
+        <li>Data: Fitbit Fitness Tracker Data (Kaggle, CC0, 30 users, 2016)</li>
+        <li>Focus: activity patterns, sleep behavior, user segments, engagement opportunities</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Deliverables</h2>
