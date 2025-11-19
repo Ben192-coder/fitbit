@@ -3,89 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <title>Ben Halperin – Fitbit Capstone Project</title>
+
 <style>
     body {
         font-family: Arial, sans-serif;
-        max-width: 900px;
-        margin: auto;
+        max-width: 800px;
+        margin: 40px auto;
         padding: 20px;
-        background: #f4f4f7;
         line-height: 1.6;
+        background: #fafafa;
     }
     h1 {
         text-align: center;
-        color: #333;
+        margin-bottom: 20px;
     }
-    h2 {
-        color: #444;
-        border-bottom: 2px solid #ddd;
-        padding-bottom: 5px;
-    }
-    .card {
-        background: white;
-        padding: 20px;
-        margin: 20px 0;
-        border-radius: 8px;
-        border: 1px solid #ddd;
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 30px;
     }
     a.button {
-        display: inline-block;
-        background: #0066cc;
+        display: block;
+        text-align: center;
+        padding: 15px;
+        background: #2C7BE5;
         color: white;
-        padding: 10px 18px;
-        margin: 10px 5px;
         text-decoration: none;
-        border-radius: 6px;
+        border-radius: 8px;
+        font-size: 18px;
         font-weight: bold;
     }
     a.button:hover {
-        background: #004c99;
+        background: #184EA6;
     }
 </style>
-</head>
 
+</head>
 <body>
 
-<h1>Fitbit Capstone Project</h1>
-<h3>By Ben Halperin</h3>
+<h1>Bellabeat Fitbit Case Study<br>by Ben Halperin</h1>
 
-<div class="card">
-    <h2>📊 Project Overview</h2>
-    <p>
-        This project analyzes Fitbit user behavior (activity + sleep) to identify trends 
-        that can guide Bellabeat’s marketing and product strategy.  
-        The full report, analysis code, visualizations, and supporting documents are available below.
-    </p>
-</div>
+<p>
+Welcome to my data analytics capstone project, where I analyze Fitbit user activity 
+and sleep trends to produce insights and marketing recommendations for Bellabeat.  
+Below you can view the full project in HTML (recommended) or download the RMarkdown source.
+</p>
 
-<div class="card">
-    <h2>📄 Main Deliverables</h2>
+<div class="button-container">
+    <!-- HTML button -->
+    <a class="button" href="B-Capstone.html">
+        View Full Project (HTML)
+    </a>
 
-    <p><strong>Interactive HTML Report (recommended):</strong></p>
-    <a class="button" href="Index.html" target="_blank">View HTML Report</a>
-
-    <p><strong>R Markdown Source Code:</strong></p>
-    <a class="button" href="Ben%20Halperin%20Fitbit%20Capstone.Rmd" target="_blank">Download RMD</a>
-
-
-<div class="card">
-    <h2>📂 Repository Files</h2>
-    <ul>
-        <li><a href="Index.html" target="_blank">Index.html</a></li>
-        <li><a href="Ben%20Halperin%20Fitbit%20Capstone.Rmd" target="_blank">Ben Halperin Fitbit Capstone.Rmd</a></li>
-    </div>   
-
-
-<div class="card">
-    <h2>🔗 Contact & Profiles</h2>
-    <ul>
-        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ben-halperin-0469a9202" target="_blank">Ben Halperin</a></li>
-        <li><strong>GitHub:</strong> <a href="https://github.com/Ben192-coder" target="_blank">Ben192-coder</a></li>
-    </ul>
+    <!-- RMD download -->
+    <a class="button" href="Ben-Halperin-Fitbit-Capstone.Rmd" download>
+        Download RMarkdown File
+    </a>
 </div>
 
 </body>
 </html>
-
 
 
