@@ -37,16 +37,34 @@ My projects focus on:
 
 ---
 
-## **📌 Google Data Analytics Capstone – Bellabeat Case Study**  
-**Status:** Publishing soon  
-**Tools:** R, tidyverse, ggplot2, SQL (optional), RMarkdown  
+## 📌 Google Data Analytics Capstone – Bellabeat Smart Device Case Study  
+**Project:** *Analyzing smart device usage data to uncover health & behavior trends for Bellabeat, a wellness technology company.*  
+**Tools:** R, tidyverse, dplyr, lubridate, ggplot2, readr, janitor, SQL (optional), RMarkdown  
 
-### 🔧 Focus Areas  
-- Wearable fitness device data  
-- Behavioral usage patterns  
-- Insights for marketing & product strategy  
+### 🔗 Project Folder  
+[google-data-analytics-capstone](./google-data-analytics-capstone)
 
----
+### 📄 Includes  
+- R scripts for cleaning & transforming Fitbit data  
+- Exploratory data analysis (EDA)  
+- Visualizations with ggplot2  
+- ROCCC dataset evaluation  
+- Feature engineering  
+- Insights for marketing strategy  
+- Final RMarkdown (HTML/PDF) case study report  
+
+### 🧠 Key Insights  
+- Most Fitbit users track steps & calories but not sleep or heart rate → opportunity for product expansion  
+- Activity levels highest on weekdays; lowest on weekends → scheduling opportunity for reminders  
+- Daily activity strongly correlates with calories burned → potential insight for goal-setting features  
+- High variability in sleep patterns → potential for coaching or automated sleep analysis  
+
+### 🛠 Skills Demonstrated  
+- Data cleaning (wide → long conversions)  
+- Aggregations (daily, hourly, user-level summaries)  
+- Feature engineering (activity levels, sleep tiers, intensity zones)  
+- R: `tidyverse`, `dplyr`, `ggplot2`, `lubridate`, `janitor`  
+- Data storytelling with RMarkdown  
 
 # 📁 Repository Structure
 
