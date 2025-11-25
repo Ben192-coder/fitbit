@@ -13,6 +13,34 @@ My projects focus on:
 - Insights for Business Strategy & Operations  
 
 ---
+---
+
+## 📌 Google Data Analytics Capstone – Bellabeat Smart Device Case Study  
+**Project:** *Analyzing Fitbit smart device usage to uncover health & behavior trends for Bellabeat, a wellness technology company.*  
+**Tools:** R, tidyverse, dplyr, lubridate, ggplot2, janitor, RMarkdown  
+
+### 🔗 Project Folder  
+[google-data-analytics-capstone](./google-data-analytics-capstone)
+
+### 📊 View the Case Study  
+
+- 📄 **Interactive HTML Report**  
+  [Ben-Halperin-Fitbit-Capstone.html](./google-data-analytics-capstone/Ben-Halperin-Fitbit-Capstone.html)
+
+- 🧾 **RMarkdown Source**  
+  [Ben Halperin Fitbit Capstone.Rmd](./google-data-analytics-capstone/Ben%20Halperin%20Fitbit%20Capstone.Rmd)
+
+- 🏠 **Index / Landing Page (optional)**  
+  [Index.html](./google-data-analytics-capstone/index.html)
+
+### 🧠 Highlights  
+
+- Cleaned and transformed Fitbit data (daily, hourly, and sleep logs)  
+- Evaluated dataset quality using the ROCCC framework  
+- Created activity, sleep, and intensity features for user segmentation  
+- Built visualizations to explore relationships between activity, calories, and usage patterns  
+- Delivered marketing recommendations for Bellabeat smart devices  
+
 
 # 📊 Featured Projects
 
