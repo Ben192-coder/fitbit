@@ -50,3 +50,51 @@ My projects focus on:
 
 # 📁 Repository Structure
 
+/portfolio
+/google-business-intelligence-capstone
+- README.md
+- Google_Fiber_BI_Capstone_Submission.zip
+- SRD_Google_Fiber.pdf
+- Strategy_Google_Fiber.pdf
+- PRD_Google_Fiber.pdf
+- Google_Fiber_Tableau_Storyboard.pdf
+- Google_Fiber_Final_Insights.pdf
+- google_fiber_kpi_dictionary.csv
+- google_fiber_kpi_dictionary.xlsx
+
+bash
+Copy code
+/google-data-analytics-capstone
+    - (Coming soon)
+README.md (this file)
+
+yaml
+Copy code
+
+---
+
+# 🛠 Skills & Tools
+
+**Languages:**  
+- SQL (BigQuery), R (tidyverse), Python (pandas), Excel/Sheets  
+
+**Analytics & BI:**  
+- Tableau, Looker Studio, Dashboards, KPI Design  
+- Star Schema Modeling, Fact/Dim Tables  
+- Data Cleaning, Aggregation, Feature Engineering  
+
+**Workflow & Documentation:**  
+- Stakeholder Docs, Technical Write-Ups, Data Dictionaries  
+- Pipeline Diagrams, ERDs, ELT Scripts  
+
+---
+
+# 🔗 Connect With Me  
+
+**LinkedIn:** https://www.linkedin.com/in/ben-halperin-0469a9202  
+**GitHub:** *(this repository)*  
+
+---
+
+# 📬 Contact  
+If you’d like to collaborate, discuss analytics, or need BI consulting for your business, feel free to reach out.
